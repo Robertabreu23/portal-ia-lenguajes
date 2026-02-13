@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java para IA - Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AI Prog Languages</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../lenguajes.html" class="active">Lenguajes</a></li>
+                <li><a href="../productos.html">Productos</a></li>
+                <li><a href="../sistemas-ia.html">Sistemas IA</a></li>
+                <li><a href="../referencias.html">Referencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <a href="../lenguajes.html" class="back-button">Volver a Lenguajes</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">☕ Java</h1>
+            <p class="page-description">
+                Robustez y escalabilidad para sistemas empresariales de IA
+            </p>
+        </div>
+
+        <div class="detail-content">
+            <h2>Características Operativas</h2>
+            
+            <h3>Paradigma y Arquitectura</h3>
+            <p>
+                Java es un lenguaje orientado a objetos, fuertemente tipado y de propósito general que se ejecuta
+                sobre la Máquina Virtual de Java (JVM). Su filosofía "write once, run anywhere" lo hace ideal
+                para aplicaciones empresariales escalables y sistemas distribuidos de IA.
+            </p>
+
+            <h3>Ventajas para IA Empresarial</h3>
+            <ul>
+                <li><strong>Escalabilidad:</strong> Excelente rendimiento en sistemas de producción a gran escala</li>
+                <li><strong>Portabilidad:</strong> Ejecución en múltiples plataformas sin modificaciones</li>
+                <li><strong>Ecosistema Empresarial:</strong> Integración perfecta con arquitecturas corporativas</li>
+                <li><strong>Gestión de Memoria:</strong> Garbage collection automático y eficiente</li>
+                <li><strong>Multithreading:</strong> Soporte robusto para procesamiento paralelo</li>
+                <li><strong>Seguridad:</strong> Características de seguridad incorporadas</li>
+            </ul>
+
+            <h3>Frameworks y Bibliotecas para IA</h3>
+            <ul>
+                <li><strong>DeepLearning4j:</strong> Framework de deep learning nativo de Java</li>
+                <li><strong>Apache Spark MLlib:</strong> Machine learning distribuido a escala masiva</li>
+                <li><strong>Weka:</strong> Colección de algoritmos de machine learning</li>
+                <li><strong>Apache Mahout:</strong> Algoritmos de ML escalables</li>
+                <li><strong>MOA:</strong> Framework para minería de datos en streams</li>
+                <li><strong>Neuroph:</strong> Framework de redes neuronales</li>
+            </ul>
+
+            <h3>Casos de Uso en IA</h3>
+            <ul>
+                <li>Sistemas de trading algorítmico y análisis financiero</li>
+                <li>Motores de recomendación para e-commerce</li>
+                <li>Procesamiento de big data con Hadoop y Spark</li>
+                <li>Sistemas de detección de fraude en tiempo real</li>
+                <li>Aplicaciones empresariales con ML integrado</li>
+                <li>Chatbots y asistentes virtuales escalables</li>
+            </ul>
+
+            <h3>Recursos y Documentación</h3>
+            <p>
+                <a href="https://www.java.com/" target="_blank">Java Official</a> |
+                <a href="https://deeplearning4j.org/" target="_blank">DeepLearning4j</a> |
+                <a href="https://spark.apache.org/mllib/" target="_blank">Spark MLlib</a> |
+                <a href="https://waikato.github.io/weka-wiki/" target="_blank">Weka</a>
+            </p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/grEKMHGYyns" 
+                        title="Machine Learning con Java" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <h3>Ejemplo de Código</h3>
+            <p>Clasificación con DeepLearning4j:</p>
+            <pre style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px; overflow-x: auto; color: var(--primary);">
+import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
+import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
+import org.deeplearning4j.nn.conf.layers.DenseLayer;
+import org.deeplearning4j.nn.conf.layers.OutputLayer;
+import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.nd4j.linalg.activations.Activation;
+import org.nd4j.linalg.lossfunctions.LossFunctions;
+
+// Configuración de red neuronal
+MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
+    .seed(123)
+    .list()
+    .layer(new DenseLayer.Builder()
+        .nIn(784)
+        .nOut(250)
+        .activation(Activation.RELU)
+        .build())
+    .layer(new OutputLayer.Builder()
+        .nIn(250)
+        .nOut(10)
+        .activation(Activation.SOFTMAX)
+        .lossFunction(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
+        .build())
+    .build();
+
+// Crear y entrenar modelo
+MultiLayerNetwork model = new MultiLayerNetwork(conf);
+model.init();
+model.fit(trainingData);
+
+// Evaluar
+Evaluation eval = model.evaluate(testData);
+System.out.println(eval.stats());
+            </pre>
+
+            <h3>Integración Empresarial</h3>
+            <p>
+                Java brilla en entornos empresariales donde la integración con sistemas existentes,
+                la estabilidad a largo plazo y el soporte comercial son críticos. Su ecosistema
+                maduro y las herramientas de desarrollo empresarial lo hacen ideal para producción.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Académico - Lenguajes de Programación para IA © 2024</p>
+    </footer>
+
+    <script src="../js/animations.js"></script>
+</body>
+</html>

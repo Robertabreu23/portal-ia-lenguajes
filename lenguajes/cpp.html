@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ para IA - Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AI Prog Languages</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../lenguajes.html" class="active">Lenguajes</a></li>
+                <li><a href="../productos.html">Productos</a></li>
+                <li><a href="../sistemas-ia.html">Sistemas IA</a></li>
+                <li><a href="../referencias.html">Referencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <a href="../lenguajes.html" class="back-button">Volver a Lenguajes</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">⚙️ C++</h1>
+            <p class="page-description">
+                Máximo rendimiento y control para IA de producción
+            </p>
+        </div>
+
+        <div class="detail-content">
+            <h2>Características Operativas</h2>
+            
+            <h3>Naturaleza y Capacidades</h3>
+            <p>
+                C++ es un lenguaje compilado de alto rendimiento que ofrece control de bajo nivel sobre
+                el hardware mientras mantiene abstracciones de alto nivel. Es el lenguaje de elección
+                cuando la velocidad y la eficiencia son críticas, especialmente en sistemas de IA en
+                producción y dispositivos con recursos limitados.
+            </p>
+
+            <h3>Ventajas para IA de Alto Rendimiento</h3>
+            <ul>
+                <li><strong>Velocidad Máxima:</strong> Código compilado nativo sin overhead de interpretación</li>
+                <li><strong>Control de Memoria:</strong> Gestión manual para optimización extrema</li>
+                <li><strong>Eficiencia GPU:</strong> CUDA y OpenCL para aceleración de hardware</li>
+                <li><strong>Optimización:</strong> Compiladores avanzados con optimizaciones agresivas</li>
+                <li><strong>Bajo Latencia:</strong> Ideal para sistemas en tiempo real</li>
+                <li><strong>Portabilidad:</strong> Soporte en prácticamente todas las plataformas</li>
+            </ul>
+
+            <h3>Frameworks y Bibliotecas</h3>
+            <ul>
+                <li><strong>TensorFlow C++ API:</strong> Backend de TensorFlow implementado en C++</li>
+                <li><strong>PyTorch C++ (LibTorch):</strong> API de C++ para PyTorch</li>
+                <li><strong>Caffe:</strong> Framework de deep learning optimizado</li>
+                <li><strong>OpenCV:</strong> Visión por computadora en C++</li>
+                <li><strong>Dlib:</strong> Machine learning y visión computacional</li>
+                <li><strong>mlpack:</strong> Biblioteca de ML rápida y flexible</li>
+                <li><strong>Shark:</strong> Framework de ML modular</li>
+            </ul>
+
+            <h3>Casos de Uso Críticos</h3>
+            <ul>
+                <li>Inferencia de modelos en producción de alta escala</li>
+                <li>IA en dispositivos embebidos y edge computing</li>
+                <li>Sistemas de visión por computadora en tiempo real</li>
+                <li>Motores de videojuegos con IA integrada</li>
+                <li>Sistemas autónomos y robótica</li>
+                <li>Optimización de kernels y operaciones de bajo nivel</li>
+            </ul>
+
+            <h3>Recursos Técnicos</h3>
+            <p>
+                <a href="https://isocpp.org/" target="_blank">C++ Standard</a> |
+                <a href="https://pytorch.org/cppdocs/" target="_blank">LibTorch</a> |
+                <a href="https://opencv.org/" target="_blank">OpenCV</a> |
+                <a href="http://dlib.net/" target="_blank">Dlib</a>
+            </p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/DdFi8ZgwvVA" 
+                        title="Machine Learning con C++" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <h3>Ejemplo de Código</h3>
+            <p>Inferencia con LibTorch:</p>
+            <pre style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px; overflow-x: auto; color: var(--primary);">
+#include &lt;torch/torch.h&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    // Cargar modelo pre-entrenado
+    torch::jit::script::Module model;
+    try {
+        model = torch::jit::load("model.pt");
+    } catch (const c10::Error& e) {
+        std::cerr << "Error cargando modelo\n";
+        return -1;
+    }
+
+    // Crear tensor de entrada
+    auto input = torch::ones({1, 3, 224, 224});
+    
+    // Inferencia
+    at::Tensor output = model.forward({input}).toTensor();
+    
+    // Obtener predicción
+    auto prediction = output.argmax(1);
+    std::cout << "Predicción: " << prediction << std::endl;
+    
+    return 0;
+}
+            </pre>
+
+            <h3>Rendimiento en Producción</h3>
+            <p>
+                C++ es fundamental en los backends de frameworks modernos de ML. La mayoría de las operaciones
+                intensivas en TensorFlow y PyTorch están implementadas en C++ para máximo rendimiento.
+                Cuando se necesita desplegar modelos a escala masiva o en dispositivos con recursos
+                limitados, C++ es frecuentemente la única opción viable.
+            </p>
+
+            <h3>Integración con Python</h3>
+            <p>
+                Una estrategia común es desarrollar y entrenar modelos en Python, luego implementar
+                las partes críticas de rendimiento en C++ usando herramientas como pybind11 o Cython.
+                Esto combina la productividad de Python con el rendimiento de C++.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Académico - Lenguajes de Programación para IA © 2024</p>
+    </footer>
+
+    <script src="../js/animations.js"></script>
+</body>
+</html>

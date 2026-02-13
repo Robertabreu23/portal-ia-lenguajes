@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python para IA - Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AI Prog Languages</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../lenguajes.html" class="active">Lenguajes</a></li>
+                <li><a href="../productos.html">Productos</a></li>
+                <li><a href="../sistemas-ia.html">Sistemas IA</a></li>
+                <li><a href="../referencias.html">Referencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <a href="../lenguajes.html" class="back-button">Volver a Lenguajes</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">🐍 Python</h1>
+            <p class="page-description">
+                El lenguaje líder en Inteligencia Artificial y Machine Learning
+            </p>
+        </div>
+
+        <div class="detail-content">
+            <h2>Características Operativas</h2>
+            
+            <h3>Paradigma y Sintaxis</h3>
+            <p>
+                Python es un lenguaje de programación interpretado, multiparadigma que soporta programación
+                orientada a objetos, imperativa y funcional. Su sintaxis clara y legible lo hace ideal para
+                el desarrollo rápido de prototipos y la colaboración en equipos de investigación.
+            </p>
+
+            <h3>Ventajas para IA y ML</h3>
+            <ul>
+                <li><strong>Ecosistema Rico:</strong> Bibliotecas especializadas como TensorFlow, PyTorch, Keras, scikit-learn, NLTK, y OpenCV</li>
+                <li><strong>Productividad:</strong> Sintaxis simple que permite implementar algoritmos complejos con menos código</li>
+                <li><strong>Comunidad Activa:</strong> Gran cantidad de recursos, tutoriales y soporte de la comunidad</li>
+                <li><strong>Interoperabilidad:</strong> Fácil integración con C/C++ para optimización de rendimiento</li>
+                <li><strong>Visualización:</strong> Excelentes herramientas como Matplotlib, Seaborn y Plotly</li>
+            </ul>
+
+            <h3>Bibliotecas Principales para IA</h3>
+            <ul>
+                <li><strong>TensorFlow:</strong> Framework de deep learning desarrollado por Google</li>
+                <li><strong>PyTorch:</strong> Framework dinámico preferido en investigación académica</li>
+                <li><strong>scikit-learn:</strong> Herramientas completas para machine learning tradicional</li>
+                <li><strong>Keras:</strong> API de alto nivel para redes neuronales</li>
+                <li><strong>Pandas:</strong> Manipulación y análisis de datos</li>
+                <li><strong>NumPy:</strong> Computación numérica de alto rendimiento</li>
+                <li><strong>NLTK y spaCy:</strong> Procesamiento de lenguaje natural</li>
+            </ul>
+
+            <h3>Casos de Uso en IA</h3>
+            <ul>
+                <li>Desarrollo de modelos de deep learning para visión por computadora</li>
+                <li>Procesamiento de lenguaje natural y chatbots</li>
+                <li>Sistemas de recomendación</li>
+                <li>Análisis predictivo y series temporales</li>
+                <li>Reconocimiento de patrones y clasificación</li>
+                <li>Generación de contenido con modelos generativos</li>
+            </ul>
+
+            <h3>Recursos de Aprendizaje</h3>
+            <p>
+                <a href="https://www.python.org/" target="_blank">Sitio Oficial de Python</a> |
+                <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a> |
+                <a href="https://pytorch.org/" target="_blank">PyTorch</a> |
+                <a href="https://scikit-learn.org/" target="_blank">scikit-learn</a>
+            </p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/rfscVS0vtbw" 
+                        title="Python para Machine Learning" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <h3>Ejemplo de Código</h3>
+            <p>Implementación simple de un clasificador con scikit-learn:</p>
+            <pre style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px; overflow-x: auto; color: var(--primary);">
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import pandas as pd
+
+# Cargar datos
+data = pd.read_csv('dataset.csv')
+X = data.drop('target', axis=1)
+y = data['target']
+
+# Dividir datos
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Entrenar modelo
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+
+# Evaluar
+predictions = model.predict(X_test)
+accuracy = accuracy_score(y_test, predictions)
+print(f'Precisión: {accuracy:.2%}')
+            </pre>
+
+            <h3>Rendimiento y Optimización</h3>
+            <p>
+                Aunque Python es interpretado, sus bibliotecas de IA están optimizadas con código C/C++ y
+                aprovechan aceleración por GPU. Herramientas como Numba y Cython permiten compilar código
+                Python para mejorar significativamente el rendimiento en operaciones críticas.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Académico - Lenguajes de Programación para IA © 2024</p>
+    </footer>
+
+    <script src="../js/animations.js"></script>
+</body>
+</html>

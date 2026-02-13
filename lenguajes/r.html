@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R para IA - Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AI Prog Languages</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../lenguajes.html" class="active">Lenguajes</a></li>
+                <li><a href="../productos.html">Productos</a></li>
+                <li><a href="../sistemas-ia.html">Sistemas IA</a></li>
+                <li><a href="../referencias.html">Referencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <a href="../lenguajes.html" class="back-button">Volver a Lenguajes</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">📊 R</h1>
+            <p class="page-description">
+                El lenguaje especializado en estadística y análisis de datos
+            </p>
+        </div>
+
+        <div class="detail-content">
+            <h2>Características Operativas</h2>
+            
+            <h3>Paradigma y Orientación</h3>
+            <p>
+                R es un lenguaje y entorno de programación diseñado específicamente para computación estadística
+                y gráficos. Es ampliamente utilizado por estadísticos, científicos de datos y analistas para
+                análisis de datos, modelado estadístico y visualización avanzada.
+            </p>
+
+            <h3>Ventajas para IA y Análisis de Datos</h3>
+            <ul>
+                <li><strong>Análisis Estadístico Avanzado:</strong> Métodos estadísticos incorporados y extensos paquetes especializados</li>
+                <li><strong>Visualización Superior:</strong> ggplot2, Plotly, y otras bibliotecas de visualización de clase mundial</li>
+                <li><strong>CRAN:</strong> Repositorio con más de 18,000 paquetes especializados</li>
+                <li><strong>RStudio:</strong> IDE potente y amigable para desarrollo</li>
+                <li><strong>Tidyverse:</strong> Colección de paquetes para ciencia de datos moderna</li>
+            </ul>
+
+            <h3>Paquetes Principales para IA</h3>
+            <ul>
+                <li><strong>caret:</strong> Framework unificado para machine learning</li>
+                <li><strong>randomForest:</strong> Implementación de bosques aleatorios</li>
+                <li><strong>e1071:</strong> SVM y otros algoritmos de ML</li>
+                <li><strong>keras y tensorflow:</strong> Deep learning en R</li>
+                <li><strong>dplyr y tidyr:</strong> Manipulación de datos</li>
+                <li><strong>ggplot2:</strong> Visualización basada en gramática de gráficos</li>
+                <li><strong>mlr3:</strong> Framework moderno de machine learning</li>
+            </ul>
+
+            <h3>Casos de Uso Específicos</h3>
+            <ul>
+                <li>Análisis estadístico complejo y modelado predictivo</li>
+                <li>Exploración y visualización de datos avanzada</li>
+                <li>Análisis de series temporales y pronósticos</li>
+                <li>Pruebas A/B y análisis de experimentos</li>
+                <li>Bioinformática y genómica</li>
+                <li>Análisis de riesgo financiero</li>
+            </ul>
+
+            <h3>Recursos Principales</h3>
+            <p>
+                <a href="https://www.r-project.org/" target="_blank">Sitio Oficial de R</a> |
+                <a href="https://rstudio.com/" target="_blank">RStudio</a> |
+                <a href="https://www.tidyverse.org/" target="_blank">Tidyverse</a> |
+                <a href="https://cran.r-project.org/" target="_blank">CRAN</a>
+            </p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/eDrhZb2onWY" 
+                        title="Machine Learning con R" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <h3>Ejemplo de Código</h3>
+            <p>Análisis y modelado con tidyverse y caret:</p>
+            <pre style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px; overflow-x: auto; color: var(--primary);">
+library(tidyverse)
+library(caret)
+
+# Cargar y explorar datos
+data <- read_csv("dataset.csv") %>%
+  mutate(target = as.factor(target)) %>%
+  na.omit()
+
+# Visualización
+ggplot(data, aes(x = feature1, y = feature2, color = target)) +
+  geom_point(alpha = 0.6) +
+  theme_minimal() +
+  labs(title = "Distribución de Clases")
+
+# Entrenamiento
+set.seed(42)
+trainIndex <- createDataPartition(data$target, p = 0.8, list = FALSE)
+trainData <- data[trainIndex, ]
+testData <- data[-trainIndex, ]
+
+# Modelo Random Forest
+model <- train(target ~ ., 
+               data = trainData,
+               method = "rf",
+               trControl = trainControl(method = "cv", number = 5))
+
+# Predicción y evaluación
+predictions <- predict(model, testData)
+confusionMatrix(predictions, testData$target)
+            </pre>
+
+            <h3>Ventajas Competitivas</h3>
+            <p>
+                R sobresale en análisis exploratorio de datos y producción de visualizaciones de publicación.
+                Su enfoque estadístico lo hace ideal para investigadores y analistas que necesitan métodos
+                estadísticos rigurosos y capacidades de reporte reproducible con R Markdown.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Académico - Lenguajes de Programación para IA © 2024</p>
+    </footer>
+
+    <script src="../js/animations.js"></script>
+</body>
+</html>

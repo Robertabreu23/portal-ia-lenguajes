@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia para IA - Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AI Prog Languages</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../lenguajes.html" class="active">Lenguajes</a></li>
+                <li><a href="../productos.html">Productos</a></li>
+                <li><a href="../sistemas-ia.html">Sistemas IA</a></li>
+                <li><a href="../referencias.html">Referencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <a href="../lenguajes.html" class="back-button">Volver a Lenguajes</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">⚡ Julia</h1>
+            <p class="page-description">
+                Alto rendimiento para computación científica y numérica
+            </p>
+        </div>
+
+        <div class="detail-content">
+            <h2>Características Operativas</h2>
+            
+            <h3>Diseño y Filosofía</h3>
+            <p>
+                Julia es un lenguaje moderno de alto nivel diseñado específicamente para computación numérica
+                y científica de alto rendimiento. Combina la facilidad de uso de Python con velocidades
+                cercanas a C, resolviendo el "problema de dos lenguajes" en computación científica.
+            </p>
+
+            <h3>Ventajas Únicas para IA</h3>
+            <ul>
+                <li><strong>Velocidad Excepcional:</strong> Compilación JIT que alcanza rendimiento similar a C/Fortran</li>
+                <li><strong>Despacho Múltiple:</strong> Sistema de tipos flexible y potente</li>
+                <li><strong>Paralelización Nativa:</strong> Soporte integrado para computación paralela y distribuida</li>
+                <li><strong>Sintaxis Matemática:</strong> Notación cercana a las ecuaciones matemáticas</li>
+                <li><strong>Interoperabilidad:</strong> Llamadas directas a código C, Python y R</li>
+                <li><strong>Diferenciación Automática:</strong> Gradientes automáticos de alto rendimiento</li>
+            </ul>
+
+            <h3>Ecosistema de IA y ML</h3>
+            <ul>
+                <li><strong>Flux.jl:</strong> Framework de ML puro en Julia, flexible y rápido</li>
+                <li><strong>MLJ.jl:</strong> Interfaz unificada para machine learning</li>
+                <li><strong>Knet.jl:</strong> Deep learning framework con autograd</li>
+                <li><strong>Turing.jl:</strong> Programación probabilística bayesiana</li>
+                <li><strong>DifferentialEquations.jl:</strong> Resolver ecuaciones diferenciales</li>
+                <li><strong>Plots.jl:</strong> Visualización versátil</li>
+            </ul>
+
+            <h3>Aplicaciones Ideales</h3>
+            <ul>
+                <li>Simulaciones científicas que requieren máximo rendimiento</li>
+                <li>Optimización numérica y computación técnica</li>
+                <li>Modelos físicos y basados en ecuaciones</li>
+                <li>Investigación en ML que requiere experimentación rápida</li>
+                <li>Computación cuántica y algoritmos avanzados</li>
+                <li>Finanzas cuantitativas y modelado de riesgos</li>
+            </ul>
+
+            <h3>Recursos y Comunidad</h3>
+            <p>
+                <a href="https://julialang.org/" target="_blank">Julia Official</a> |
+                <a href="https://fluxml.ai/" target="_blank">Flux.jl</a> |
+                <a href="https://alan-turing-institute.github.io/MLJ.jl/" target="_blank">MLJ.jl</a> |
+                <a href="https://juliapackages.com/" target="_blank">Julia Packages</a>
+            </p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/8h8rQyEpiZA" 
+                        title="Julia para Machine Learning" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <h3>Ejemplo de Código</h3>
+            <p>Red neuronal con Flux.jl:</p>
+            <pre style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px; overflow-x: auto; color: var(--primary);">
+using Flux
+using Flux: onehotbatch, onecold, crossentropy
+using Statistics
+
+# Definir modelo
+model = Chain(
+    Dense(784, 128, relu),
+    Dropout(0.2),
+    Dense(128, 64, relu),
+    Dense(64, 10),
+    softmax
+)
+
+# Función de pérdida y optimizador
+loss(x, y) = crossentropy(model(x), y)
+opt = ADAM(0.001)
+
+# Ciclo de entrenamiento
+for epoch in 1:10
+    Flux.train!(loss, params(model), train_data, opt)
+    
+    # Evaluación
+    accuracy = mean(onecold(model(test_x)) .== onecold(test_y))
+    println("Epoch $epoch - Accuracy: $(accuracy*100)%")
+end
+            </pre>
+
+            <h3>El Futuro de la Computación Científica</h3>
+            <p>
+                Julia representa una nueva generación de lenguajes diseñados desde cero para la era
+                de la ciencia de datos y el machine learning. Su combinación única de alto rendimiento
+                y facilidad de uso la hace especialmente atractiva para investigadores e ingenieros
+                que necesitan tanto velocidad como productividad.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Académico - Lenguajes de Programación para IA © 2024</p>
+    </footer>
+
+    <script src="../js/animations.js"></script>
+</body>
+</html>
